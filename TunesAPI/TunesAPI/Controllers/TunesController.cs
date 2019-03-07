@@ -11,9 +11,9 @@ namespace TunesAPI.Controllers
     public class TunesController : ControllerBase
     {
         List<Tunes> bangers = new List<Tunes>() {
-                new Tunes { Id = 1, Artist = "Coldplay", Song = "Yellow", Album = "Viva la Vida" },
-                 new Tunes { Id = 2, Artist = "Johnny Cash", Song = "The Ring of Fire", Album = "Ring of Fire" },
-                 new Tunes { Id = 3, Artist = "Coldplay", Song = "Charlie Brown", Album = "X & Y" }
+                new Tunes { Id = 1, Artist = "Coldplay", Song = "Yellow", Album = "Viva la Vida", Genre="Pop" },
+                 new Tunes { Id = 2, Artist = "Johnny Cash", Song = "The Ring of Fire", Album = "Ring of Fire", Genre="Pop" },
+                 new Tunes { Id = 3, Artist = "Coldplay", Song = "Charlie Brown", Album = "X & Y", Genre="Pop" }
             };
         // GET api/values
         [HttpGet("all")]
