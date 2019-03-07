@@ -12,5 +12,6 @@ namespace TunesAPI
         public String Artist { get; set; }
         public String Song { get; set; }
         public String Album { get; set; }
+        public String Genre { get; set; }
     }
 }
