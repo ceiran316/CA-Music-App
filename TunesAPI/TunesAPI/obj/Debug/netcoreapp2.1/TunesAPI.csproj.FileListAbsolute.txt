@@ -1,0 +1,14 @@
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.deps.json
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.runtimeconfig.json
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.runtimeconfig.dev.json
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.dll
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.pdb
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.csprojAssemblyReference.cache
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.csproj.CoreCompileInputs.cache
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.RazorAssemblyInfo.cache
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.RazorAssemblyInfo.cs
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.AssemblyInfoInputs.cache
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.AssemblyInfo.cs
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.RazorTargetAssemblyInfo.cache
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.dll
+C:\CA2-Music\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.pdb
