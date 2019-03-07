@@ -8,6 +8,7 @@ namespace TunesAPI
 {
     public class Tunes
     {
+        //ID autogenerates
         public int Id { get; set; }
         public String Artist { get; set; }
         public String Song { get; set; }
