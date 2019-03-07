@@ -11795,23 +11795,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anthony Neville\\.nuget\\packages\\": {},
+    "C:\\Users\\CeiranMcCabe\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\CA2-Music\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
+      "projectUniqueName": "C:\\Users\\CeiranMcCabe\\Documents\\College\\sem8\\EAD2\\ca2\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
       "projectName": "TunesAPI",
-      "projectPath": "C:\\CA2-Music\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
-      "packagesPath": "C:\\Users\\Anthony Neville\\.nuget\\packages\\",
-      "outputPath": "C:\\CA2-Music\\CA-Music-App\\TunesAPI\\TunesAPI\\obj\\",
+      "projectPath": "C:\\Users\\CeiranMcCabe\\Documents\\College\\sem8\\EAD2\\ca2\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
+      "packagesPath": "C:\\Users\\CeiranMcCabe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CeiranMcCabe\\Documents\\College\\sem8\\EAD2\\ca2\\CA-Music-App\\TunesAPI\\TunesAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anthony Neville\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CeiranMcCabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
