@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ceira\\OneDrive\\AAA College\\sem8\\EAD2\\CA2\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
+      "projectUniqueName": "C:\\Users\\ceira\\OneDrive\\AAA College\\sem8\\EAD2\\CA2\\CA2\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
       "projectName": "TunesAPI",
-      "projectPath": "C:\\Users\\ceira\\OneDrive\\AAA College\\sem8\\EAD2\\CA2\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
+      "projectPath": "C:\\Users\\ceira\\OneDrive\\AAA College\\sem8\\EAD2\\CA2\\CA2\\CA-Music-App\\TunesAPI\\TunesAPI\\TunesAPI.csproj",
       "packagesPath": "C:\\Users\\ceira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ceira\\OneDrive\\AAA College\\sem8\\EAD2\\CA2\\CA-Music-App\\TunesAPI\\TunesAPI\\obj\\",
+      "outputPath": "C:\\Users\\ceira\\OneDrive\\AAA College\\sem8\\EAD2\\CA2\\CA2\\CA-Music-App\\TunesAPI\\TunesAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
