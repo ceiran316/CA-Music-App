@@ -1,0 +1,8 @@
+C:\Users\ceira\source\repos\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.deps.json
+C:\Users\ceira\source\repos\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.runtimeconfig.json
+C:\Users\ceira\source\repos\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.runtimeconfig.dev.json
+C:\Users\ceira\source\repos\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.dll
+C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.csprojAssemblyReference.cache
+C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.csproj.CoreCompileInputs.cache
+C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.AssemblyInfoInputs.cache
+C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.AssemblyInfo.cs

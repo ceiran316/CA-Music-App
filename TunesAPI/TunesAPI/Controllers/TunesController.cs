@@ -81,7 +81,7 @@ namespace TunesAPI.Controllers
             return bangers.OrderBy(c => c.IrishChart);
         }
 
-        //GET customer by name
+        //GET Tunes by name
         [HttpGet("Genre/{genre}")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
@@ -89,6 +89,40 @@ namespace TunesAPI.Controllers
         {
             Tunes pop = bangers.SingleOrDefault(c => c.Genre == genre);
             return Ok(genre);
+        }
+
+        //Get Tunes by chart position
+        [HttpGet("ids/{id}")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
+        public ActionResult<Tunes> GetNameByPos(int pos)
+        {
+            Tunes names = bangers.SingleOrDefault(c => c.IrishChart == pos);
+            if (names == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(names);
+            }
+        }
+
+        //Get Tunes by id
+        [HttpGet("ids/{id}")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
+        public ActionResult<Tunes> GetNameByID(int id)
+        {
+            Tunes names = bangers.SingleOrDefault(c => c.IrishChart == id);
+            if (names == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(names);
+            }
         }
 
         // GET api/values/5

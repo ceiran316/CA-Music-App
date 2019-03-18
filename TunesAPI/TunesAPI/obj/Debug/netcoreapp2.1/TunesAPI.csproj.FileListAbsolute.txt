@@ -26,3 +26,17 @@ C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA-Music-App\TunesAPI\TunesAPI
 C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.RazorTargetAssemblyInfo.cache
 C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.dll
 C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.pdb
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.deps.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.runtimeconfig.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.runtimeconfig.dev.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\bin\Debug\netcoreapp2.1\TunesAPI.pdb
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.csproj.CoreCompileInputs.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.RazorAssemblyInfo.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.RazorAssemblyInfo.cs
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.AssemblyInfoInputs.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.AssemblyInfo.cs
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.RazorTargetAssemblyInfo.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.pdb
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesAPI\obj\Debug\netcoreapp2.1\TunesAPI.csprojAssemblyReference.cache
