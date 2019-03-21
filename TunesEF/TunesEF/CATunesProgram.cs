@@ -33,18 +33,18 @@ namespace TunesEF
         public String BuyLink { get; set; }
         public DateTime Realsed { get; set; }
         public String Duration { get; set; }
-        // Tuness table with column names corresponding to property names
+        // TunesDB table with column names corresponding to property names
     }
     // context of connection to database 
     public class TunesContext : DbContext       // System.Data.Entity.DbContext        
     {
-        public DbSet<Tunes> Tuness { get; set; }
+        public DbSet<Tunes> TunesDB { get; set; }
 
         // localDB connection string
         // c:\users\gary\TunesDB1.mdf
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TunesDB1;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
     }
 
@@ -57,7 +57,7 @@ namespace TunesEF
         {
             using (TunesContext TunesContext = new TunesContext())       // DbContext : IDisposable
             {
-                // add 2 Tuness, omit identity column values 
+                // add 2 TunesDB, omit identity column values 
                 Tunes s1 = new Tunes { Id = 1, IrishChart = 1, Title = "Thriller", Artist = "Michael Jackson", Album = "Thriller", Genre = Genre.Pop, Duration = "5.58", Realsed = new DateTime(1982, 11, 30), Price = 9.16, BuyLink = "https://www.amazon.com/Thriller-Michael-Jackson/dp/B00VSHH9GC/ref=tmm_acd_swatch_0?_encoding=UTF8&qid=1552692547&sr=8-1", AlbumCoverLink = "https://upload.wikimedia.org/wikipedia/en/thumb/5/55/Michael_Jackson_-_Thriller.png/220px-Michael_Jackson_-_Thriller.png" };
                 Tunes s2 = new Tunes { Id = 2, IrishChart = 2, Title = "Like a Prayer", Artist = "Madonna", Album = "Like a Prayer", Genre = Genre.Pop, Duration = "5.41", Realsed = new DateTime(1989, 03, 17), Price = 10.03, BuyLink = "https://www.amazon.com/Like-Prayer-Madonna/dp/B000002LGQ/ref=tmm_acd_swatch_0?_encoding=UTF8&qid=1552693261&sr=8-2", AlbumCoverLink = "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png" };
                 Tunes s3 = new Tunes { Id = 3, IrishChart = 3, Title = "Stairway To Heaven", Artist = "Led Zepplin", Album = "Led Zepplin IV", Genre = Genre.Rock, Duration = "7.58", Realsed = new DateTime(1971, 10, 27), Price = 12.86, BuyLink = "https://www.amazon.com/Led-Zeppelin-IV-Deluxe-CD/dp/B00M30SPMU/ref=sr_1_1?crid=38NA70ZQWMMCM&keywords=led+zepplin+iv&qid=1552693714&s=gateway&sprefix=led+zepplin+iv%2Caps%2C246&sr=8-1", AlbumCoverLink = "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg/220px-Led_Zeppelin_-_Led_Zeppelin_IV.jpg" };
@@ -119,13 +119,13 @@ namespace TunesEF
                 Tunes s59 = new Tunes { Id = 59, IrishChart = 59, Title = "Walkin’ After Midnight", Artist = "Patsy Cline", Album = "Showcase", Genre = Genre.Country, Duration = "2.01", Realsed = new DateTime(1961, 12, 29), Price = 7.35, BuyLink = "https://www.amazon.com/Patsy-Cline-Showcase/dp/B000002NW2/ref=sr_1_3?keywords=showcase+cd&qid=1552712374&s=gateway&sr=8-3", AlbumCoverLink = "https://images-na.ssl-images-amazon.com/images/I/513FJ48mNNL._SY300_QL70_.jpg" };
                 Tunes s60 = new Tunes { Id = 60, IrishChart = 60, Title = "Kernkraft 400", Artist = "Zombie Nation", Album = "Kernkraft 400", Genre = Genre.Dance, Duration = "4.45", Realsed = new DateTime(1999, 5, 12), Price = 5.05, BuyLink = "https://www.amazon.com/Kernkraft-400-Zombie-Nation/dp/B00004TWJS/ref=sr_1_1?keywords=kernkraft+400+cd&qid=1552712477&s=gateway&sr=8-1", AlbumCoverLink = "https://images-na.ssl-images-amazon.com/images/I/51xMrOlu70L._SY355_.jpg" };
 
-                TunesContext.Tuness.Add(s1);
-                TunesContext.Tuness.Add(s2);
+                TunesContext.TunesDB.Add(s1);
+                TunesContext.TunesDB.Add(s2);
                 TunesContext.SaveChanges();                                   // commit
 
-                // query Tuness in order of ascending Tunes number
+                // query TunesDB in order of ascending Tunes number
                 // LINQ to entities
-                var TunessQueryInOrder = TunesContext.Tuness.OrderBy(Tunes => Tunes.IrishChart);
+                var TunessQueryInOrder = TunesContext.TunesDB.OrderBy(Tunes => Tunes.IrishChart);
                 foreach (var Tunes in TunessQueryInOrder)
                 {
                     Console.WriteLine(Tunes.IrishChart + " " + Tunes.Title + " " + Tunes.Artist + " " + Tunes.Album);

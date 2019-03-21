@@ -6,3 +6,14 @@ C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.cspr
 C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.csproj.CoreCompileInputs.cache
 C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.AssemblyInfoInputs.cache
 C:\Users\ceira\source\repos\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.AssemblyInfo.cs
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.deps.json
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.runtimeconfig.json
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.runtimeconfig.dev.json
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.dll
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\bin\Debug\netcoreapp2.1\TunesEF.pdb
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.csprojAssemblyReference.cache
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.csproj.CoreCompileInputs.cache
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.AssemblyInfoInputs.cache
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.AssemblyInfo.cs
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.dll
+C:\CA2-Music\CA-Music-App\TunesEF\TunesEF\obj\Debug\netcoreapp2.1\TunesEF.pdb
