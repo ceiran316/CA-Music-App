@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace TunesAPI.Controllers
@@ -128,20 +129,34 @@ namespace TunesAPI.Controllers
             }
         }
 
+        
+
+
         //Get Tunes by id
-        [HttpGet("ids/{id}")]
+        [HttpGet("genre/{genre}")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
-        public ActionResult<Tunes> GetNameByID(int id)
+        public async Task<ActionResult<Tunes>> GetGenreSongsAsync(string genre)
         {
-            Tunes names = _context.Tunes.SingleOrDefault(c => c.IrishChart == id);
-            if (names == null)
+            if (genre == null)
+            {
+                return NotFound();
+            }
+            //string query = "select TOP(5)* from dbo.Tunes where GENRE = '{0}' order by IRISHCHART ASC ";
+            //var rock = _context.Tunes.OrderBy(c => c.IrishChart).Where(c => c.Genre == genre);
+            var type = await _context.Tunes
+                .Where(g => g.Genre.ToLower() == genre)
+                .OrderBy(g => g.IrishChart)
+                .Select(g => new {
+                g.IrishChart, g.Title, g.Artist, g.Genre})
+                .ToListAsync();
+            if (type == null)
             {
                 return NotFound();
             }
             else
             {
-                return Ok(names);
+                return Ok(type);
             }
         }
 
