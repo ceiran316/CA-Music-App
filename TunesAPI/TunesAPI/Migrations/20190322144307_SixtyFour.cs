@@ -1,14 +1,13 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace TunesAPI.Migrations
 {
-    public partial class TunesSixty : Migration
+    public partial class SixtyFour : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
             migrationBuilder.CreateTable(
                 name: "Tunes",
                 columns: table => new
@@ -101,6 +100,7 @@ namespace TunesAPI.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+
             migrationBuilder.DeleteData(
                 table: "Tunes",
                 keyColumn: "Id",
@@ -404,5 +404,6 @@ namespace TunesAPI.Migrations
             migrationBuilder.DropTable(
                 name: "Tunes");
         }
+    
     }
 }
