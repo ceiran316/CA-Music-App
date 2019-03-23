@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace TunesAPI
 {
-
     public class TunesContext : DbContext
     {
         public TunesContext(DbContextOptions<TunesContext> options)
@@ -15,7 +14,6 @@ namespace TunesAPI
         { }
 
         public DbSet<Tunes> Tunes { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -83,9 +81,7 @@ namespace TunesAPI
                 new Tunes { Id = 60, IrishChart = 60, Title = "Kernkraft 400", Artist = "Zombie Nation", Album = "Kernkraft 400", Genre = "Dance", Duration = "4.45", Realsed = new DateTime(1999, 5, 12), Price = 5.05, BuyLink = "https://www.amazon.com/Kernkraft-400-Zombie-Nation/dp/B00004TWJS/ref=sr_1_1?keywords=kernkraft+400+cd&qid=1552712477&s=gateway&sr=8-1", AlbumCoverLink = "https://images-na.ssl-images-amazon.com/images/I/51xMrOlu70L._SY355_.jpg" }
             );
         }
-
     }
-
 
     public enum Genre
     {

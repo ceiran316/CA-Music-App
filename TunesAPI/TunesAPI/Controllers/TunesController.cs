@@ -63,11 +63,11 @@ namespace TunesAPI.Controllers
         {
             var song = _context.Tunes.Where(c => c.IrishChart == pos)
                 .Select(g => new {
-                g.IrishChart,
-                g.Title,
-                g.Artist,
-                g.Genre
-            });
+                    g.IrishChart,
+                    g.Title,
+                    g.Artist,
+                    g.Genre
+                });
             if (song == null)
             {
                 return NotFound();
@@ -140,7 +140,10 @@ namespace TunesAPI.Controllers
                 .Where(g => g.Genre.ToLower() == genre)
                 .OrderBy(g => g.IrishChart)
                 .Select(g => new {
-                g.IrishChart, g.Title, g.Artist, g.Genre})
+                    g.IrishChart,
+                    g.Title,
+                    g.Artist,
+                    g.Genre})
                 .ToListAsync();
             if (type == null)
             {
@@ -190,14 +193,14 @@ namespace TunesAPI.Controllers
         {
             var type = _context.Tunes
                 .OrderByDescending(c => c.Realsed)
-            .Select(g => new
-            {
-                g.IrishChart,
-                g.Title,
-                g.Artist,
-                g.Genre,
-                g.Realsed
-            }).Take(5)
+                .Select(g => new
+                {
+                    g.IrishChart,
+                    g.Title,
+                    g.Artist,
+                    g.Genre,
+                    g.Realsed
+                }).Take(5)
                 .ToList();
             if (type == null)
             {
@@ -217,14 +220,14 @@ namespace TunesAPI.Controllers
         {
             var type = _context.Tunes
                 .OrderBy(c => c.Realsed)
-            .Select(g => new
-            {
-                g.IrishChart,
-                g.Title,
-                g.Artist,
-                g.Genre,
-                g.Realsed
-            }).Take(5)
+                .Select(g => new
+                {
+                    g.IrishChart,
+                    g.Title,
+                    g.Artist,
+                    g.Genre,
+                    g.Realsed
+                }).Take(5)
                 .ToList();
             if (type == null)
             {
@@ -235,6 +238,110 @@ namespace TunesAPI.Controllers
                 return Ok(type);
             }
         }
+
+        //Get cheapest Tunes 
+        [HttpGet("cheapest")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
+        public ActionResult<Tunes> GetCheapestSongs()
+        {
+            var type = _context.Tunes
+                .OrderBy(c => c.Price)
+                .Select(g => new
+                {
+                    g.IrishChart,
+                    g.Title,
+                    g.Artist,
+                    g.Genre,
+                    g.Price
+                }).Take(5)
+                .ToList();
+            if (type == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(type);
+            }
+        }
+
+        //Get cheapest Tunes 
+        [HttpGet("dearest")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
+        public ActionResult<Tunes> GetDearestSongs()
+        {
+            var type = _context.Tunes
+                .OrderByDescending(c => c.Price)
+                .Select(g => new
+                {
+                    g.IrishChart,
+                    g.Title,
+                    g.Artist,
+                    g.Genre,
+                    g.Price
+                }).Take(5)
+                .ToList();
+            if (type == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(type);
+            }
+        }
+
+        //Get priceSum Tunes 
+        [HttpGet("priceSum")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
+        public ActionResult<Tunes> GetGenrePriceSum()
+        {
+            var type = _context.Tunes
+                .GroupBy(x => x.Genre,
+             (key, values) => new {
+                 Genre = key,
+                 Total = values.Sum(x => x.Price)
+             }).OrderByDescending(x => x.Total)
+                .ToList();
+            if (type == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(type);
+            }
+        }
+
+        //Get priceSum Tunes 
+        [HttpGet("popular")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
+        public ActionResult<Tunes> GetMostPopularArtist()
+        {
+            var type = _context.Tunes
+                 .GroupBy(c => c.Artist)
+                 .Select(g => new
+                 {
+                     count = g.Count(),g.First().Artist
+                 }).OrderByDescending(g => g.count)
+                 .Take(5)
+                 .ToList();
+            if (type == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(type);
+            }
+        }
+
+        // GET api/values
+
 
         // GET api/values/5
         [HttpGet("{id}")]
