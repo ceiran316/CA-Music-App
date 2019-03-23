@@ -316,7 +316,7 @@ namespace TunesAPI.Controllers
             }
         }
 
-        //Get priceSum Tunes 
+        //Get popular Tunes 
         [HttpGet("popular")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
@@ -340,7 +340,13 @@ namespace TunesAPI.Controllers
             }
         }
 
-        // GET api/values
+        // GET all suggested tunes
+        [HttpGet("allSuggested")]
+        public IEnumerable<SuggestedTunes> GetAllSuggested()
+        {
+            //return bangers.OrderBy(c => c.IrishChart).Select(d => d.Title);
+            return _context.SuggestedTunes.OrderByDescending(t => t.Count);
+        }
 
 
         // GET api/values/5
