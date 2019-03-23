@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TunesAPI;
 
 namespace TunesAPI.Migrations
 {
     [DbContext(typeof(TunesContext))]
-    partial class TunesContextModelSnapshot : ModelSnapshot
+    [Migration("20190323105022_SuggestedTunesOne")]
+    partial class SuggestedTunesOne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,11 +40,7 @@ namespace TunesAPI.Migrations
                     b.ToTable("SuggestedTunes");
 
                     b.HasData(
-                        new { Id = 1, Artist = "The Beatles", Count = 3, Genre = "Rock", Title = "Hey Jude" },
-                        new { Id = 2, Artist = "Black Eyed Peas", Count = 2, Genre = "Pop", Title = "Where is the Love" },
-                        new { Id = 3, Artist = "AC/DC", Count = 4, Genre = "Metal", Title = "Thunderstruck" },
-                        new { Id = 4, Artist = "Jay-Z", Count = 2, Genre = "Hip-Hop", Title = "99 Problems" },
-                        new { Id = 5, Artist = "Nathan Carter", Count = 1, Genre = "Country", Title = "Wagon Wheel" }
+                        new { Id = 1, Artist = "The Beatles", Count = 1, Genre = "Rock", Title = "Hey Jude" }
                     );
                 });
 

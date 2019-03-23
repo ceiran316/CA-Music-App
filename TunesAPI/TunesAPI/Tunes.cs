@@ -15,6 +15,8 @@ namespace TunesAPI
 
         public DbSet<Tunes> Tunes { get; set; }
 
+        public DbSet<SuggestedTunes> SuggestedTunes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -80,6 +82,15 @@ namespace TunesAPI
                 new Tunes { Id = 59, IrishChart = 59, Title = "Walkin’ After Midnight", Artist = "Patsy Cline", Album = "Showcase", Genre = "Country", Duration = "2.01", Realsed = new DateTime(1961, 12, 29), Price = 7.35, BuyLink = "https://www.amazon.com/Patsy-Cline-Showcase/dp/B000002NW2/ref=sr_1_3?keywords=showcase+cd&qid=1552712374&s=gateway&sr=8-3", AlbumCoverLink = "https://images-na.ssl-images-amazon.com/images/I/513FJ48mNNL._SY300_QL70_.jpg" },
                 new Tunes { Id = 60, IrishChart = 60, Title = "Kernkraft 400", Artist = "Zombie Nation", Album = "Kernkraft 400", Genre = "Dance", Duration = "4.45", Realsed = new DateTime(1999, 5, 12), Price = 5.05, BuyLink = "https://www.amazon.com/Kernkraft-400-Zombie-Nation/dp/B00004TWJS/ref=sr_1_1?keywords=kernkraft+400+cd&qid=1552712477&s=gateway&sr=8-1", AlbumCoverLink = "https://images-na.ssl-images-amazon.com/images/I/51xMrOlu70L._SY355_.jpg" }
             );
+
+            base.OnModelCreating(builder);
+            builder.Entity<SuggestedTunes>().HasData(
+                new SuggestedTunes { Id = 1, Count = 3, Title = "Hey Jude", Artist = "The Beatles", Genre = "Rock" },
+                new SuggestedTunes { Id = 2, Count = 2, Title = "Where is the Love", Artist = "Black Eyed Peas", Genre = "Pop" },
+                new SuggestedTunes { Id = 3, Count = 4, Title = "Thunderstruck", Artist = "AC/DC", Genre = "Metal" },
+                new SuggestedTunes { Id = 4, Count = 2, Title = "99 Problems", Artist = "Jay-Z", Genre = "Hip-Hop" },
+                new SuggestedTunes { Id = 5, Count = 1, Title = "Wagon Wheel", Artist = "Nathan Carter", Genre = "Country" }
+            );
         }
     }
 
@@ -102,6 +113,15 @@ namespace TunesAPI
         public String BuyLink { get; set; }
         public DateTime Realsed { get; set; }
         public String Duration { get; set; }
+    }
+
+    public class SuggestedTunes
+    {
+        public int Id { get; set; }
+        public int Count { get; set; }
+        public String Title { get; set; }
+        public String Artist { get; set; }
+        public String Genre { get; set; }
     }
 
 }
