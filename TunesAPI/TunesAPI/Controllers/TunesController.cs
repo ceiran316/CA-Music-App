@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
@@ -348,6 +349,77 @@ namespace TunesAPI.Controllers
             return _context.SuggestedTunes.OrderByDescending(t => t.Count);
         }
 
+        [HttpPost]
+        [ProducesResponseType(201)]             // created
+        [ProducesResponseType(400)]             // bad request
+        public IActionResult PostSuggestion([FromBody] string titleIn, string artistIn, string genreIn)
+        {
+            var record = _context.SuggestedTunes.SingleOrDefault(d => d.Title == titleIn);
+            string connectionString = null;
+            string sql = null;
+            connectionString = "Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            if (record == null)
+            {
+                using (SqlConnection cnn = new SqlConnection(connectionString))
+                {
+                    sql = "SET IDENTITY_INSERT SuggestedTunes ON insert into SuggestedTunes ([Id],[Count],[Title],[Artist],[Genre]) values(@id,@count,@title,@artist,@genre)";
+                    cnn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", 99);
+                        cmd.Parameters.AddWithValue("@count", 1);
+                        cmd.Parameters.AddWithValue("@title", titleIn);
+                        cmd.Parameters.AddWithValue("@artist", artistIn);
+                        cmd.Parameters.AddWithValue("@genre", genreIn);
+                        cmd.ExecuteNonQuery();
+                        return Ok(record);
+                    }
+                }
+            }
+            else
+            {
+                PutSuggestion(titleIn);
+                return Ok();
+            }
+        }
+
+        [HttpPut]
+        [ProducesResponseType(201)]             // created
+        [ProducesResponseType(400)]             // bad request
+        public IActionResult PutSuggestion([FromBody] string titleIn)
+        {
+            var record = _context.SuggestedTunes.SingleOrDefault(d => d.Title == titleIn);
+            string connectionString = null;
+            string sql = null;
+            connectionString = "Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            if (record != null)
+            {
+                using (SqlConnection cnn = new SqlConnection(connectionString))
+                {
+                    sql = "UPDATE SuggestedTunes SET Count = @count WHERE Title = @title";
+                    cnn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                    {
+                        cmd.Parameters.AddWithValue("@count", record.Count + 1);
+                        cmd.Parameters.AddWithValue("@title", titleIn);
+                        cmd.ExecuteNonQuery();
+                        return Ok(record);
+                    }
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpGet("allNewSuggested")]
+        public IEnumerable<SuggestedTunes> GetNewAllSuggested()
+        {
+            PostSuggestion("Umbrella", "Rihanna", "Pop");
+            //return bangers.OrderBy(c => c.IrishChart).Select(d => d.Title);
+            return _context.SuggestedTunes.OrderByDescending(t => t.Count);
+        }
 
         // GET api/values/5
         [HttpGet("{id}")]

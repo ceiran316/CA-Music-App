@@ -106,7 +106,6 @@ namespace TunesAPI
         public String Title { get; set; }
         public String Artist { get; set; }
         public String Album { get; set; }
-        //public Genre Genre { get; set; }
         public String Genre{ get; set; }
         public String AlbumCoverLink { get; set; }
         public double Price { get; set; }

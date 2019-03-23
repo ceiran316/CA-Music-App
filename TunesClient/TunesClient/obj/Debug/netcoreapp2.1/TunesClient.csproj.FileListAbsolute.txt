@@ -1,0 +1,11 @@
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\bin\Debug\netcoreapp2.1\TunesClient.deps.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\bin\Debug\netcoreapp2.1\TunesClient.runtimeconfig.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\bin\Debug\netcoreapp2.1\TunesClient.runtimeconfig.dev.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\bin\Debug\netcoreapp2.1\TunesClient.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\bin\Debug\netcoreapp2.1\TunesClient.pdb
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\obj\Debug\netcoreapp2.1\TunesClient.csproj.CoreCompileInputs.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\obj\Debug\netcoreapp2.1\TunesClient.AssemblyInfoInputs.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\obj\Debug\netcoreapp2.1\TunesClient.AssemblyInfo.cs
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\obj\Debug\netcoreapp2.1\TunesClient.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\obj\Debug\netcoreapp2.1\TunesClient.pdb
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesClient\TunesClient\obj\Debug\netcoreapp2.1\TunesClient.csprojAssemblyReference.cache
