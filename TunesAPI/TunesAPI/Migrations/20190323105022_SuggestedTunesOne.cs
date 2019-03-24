@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TunesAPI.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class SuggestedTunesOne : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

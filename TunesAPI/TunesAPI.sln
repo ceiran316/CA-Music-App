@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TunesAPI", "TunesAPI\TunesAPI.csproj", "{9BD095B0-99D3-417E-8863-0E44ACC6430B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TunesUnitTests", "TunesUnitTests\TunesUnitTests.csproj", "{BCAA3CC4-ECE7-42D2-8C75-544E05FD823D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9BD095B0-99D3-417E-8863-0E44ACC6430B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BD095B0-99D3-417E-8863-0E44ACC6430B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BD095B0-99D3-417E-8863-0E44ACC6430B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCAA3CC4-ECE7-42D2-8C75-544E05FD823D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCAA3CC4-ECE7-42D2-8C75-544E05FD823D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCAA3CC4-ECE7-42D2-8C75-544E05FD823D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCAA3CC4-ECE7-42D2-8C75-544E05FD823D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

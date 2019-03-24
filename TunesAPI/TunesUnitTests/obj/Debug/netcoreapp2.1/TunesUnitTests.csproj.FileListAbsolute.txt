@@ -1,0 +1,17 @@
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\TunesUnitTests.deps.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\TunesUnitTests.runtimeconfig.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\TunesUnitTests.runtimeconfig.dev.json
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\TunesUnitTests.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\TunesUnitTests.pdb
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\TunesAPI.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\bin\Debug\netcoreapp2.1\TunesAPI.pdb
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\obj\Debug\netcoreapp2.1\TunesUnitTests.csprojAssemblyReference.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\obj\Debug\netcoreapp2.1\TunesUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\obj\Debug\netcoreapp2.1\TunesUnitTests.AssemblyInfoInputs.cache
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\obj\Debug\netcoreapp2.1\TunesUnitTests.AssemblyInfo.cs
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\obj\Debug\netcoreapp2.1\TunesUnitTests.csproj.CopyComplete
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\obj\Debug\netcoreapp2.1\TunesUnitTests.dll
+C:\Users\ceira\OneDrive\AAA College\sem8\EAD2\CA2\CA2\CA-Music-App\TunesAPI\TunesUnitTests\obj\Debug\netcoreapp2.1\TunesUnitTests.pdb
