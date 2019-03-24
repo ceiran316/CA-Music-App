@@ -10,8 +10,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TunesAPI.Controllers
 {
-
-
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
@@ -28,7 +26,6 @@ namespace TunesAPI.Controllers
         [HttpGet("all")]
         public IEnumerable<Tunes> GetAll()
         { 
-            //return bangers.OrderBy(c => c.IrishChart).Select(d => d.Title);
             return _context.Tunes.OrderBy(t => t.IrishChart);
         }
 
@@ -345,7 +342,6 @@ namespace TunesAPI.Controllers
         [HttpGet("allSuggested")]
         public IEnumerable<SuggestedTunes> GetAllSuggested()
         {
-            //return bangers.OrderBy(c => c.IrishChart).Select(d => d.Title);
             return _context.SuggestedTunes.OrderByDescending(t => t.Count);
         }
 
@@ -366,7 +362,7 @@ namespace TunesAPI.Controllers
                     cnn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cnn))
                     {
-                        cmd.Parameters.AddWithValue("@id", 99);
+                        cmd.Parameters.AddWithValue("@id", 98);
                         cmd.Parameters.AddWithValue("@count", 1);
                         cmd.Parameters.AddWithValue("@title", titleIn);
                         cmd.Parameters.AddWithValue("@artist", artistIn);
@@ -413,12 +409,48 @@ namespace TunesAPI.Controllers
             }
         }
 
-        [HttpGet("allNewSuggested")]
+        [HttpGet("allNewHardSuggested")]
         public IEnumerable<SuggestedTunes> GetNewAllSuggested()
         {
-            PostSuggestion("Umbrella", "Rihanna", "Pop");
-            //return bangers.OrderBy(c => c.IrishChart).Select(d => d.Title);
+            PostSuggestion("Thats the Way(I Like It)", "KC & The Sunshine Band", "Disco");
             return _context.SuggestedTunes.OrderByDescending(t => t.Count);
+        }
+
+        [HttpGet("allNewParamSuggested")]
+        public IEnumerable<SuggestedTunes> GetNewAllSuggested(string titleIn, string artistIn, string genreIn)
+        {
+            PostSuggestion(titleIn, artistIn, genreIn);
+            return _context.SuggestedTunes.OrderByDescending(t => t.Count);
+        }
+
+        //deleteing list entry from id input
+        [HttpDelete("delete/{title}")]
+        [ProducesResponseType(200)]             // ok
+        [ProducesResponseType(404)]             // not found
+        public IActionResult DeleteEntry([FromRoute] string title)
+        {
+            var record = _context.SuggestedTunes.SingleOrDefault(d => d.Title == title);
+            string connectionString = null;
+            string sql = null;
+            connectionString = "Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            if (record != null)
+            {
+                using (SqlConnection cnn = new SqlConnection(connectionString))
+                {
+                    sql = "DELETE FROM SuggestedTunes WHERE Title = @title";
+                    cnn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                    {
+                        cmd.Parameters.AddWithValue("@title", title);
+                        cmd.ExecuteNonQuery();
+                        return Ok(record);
+                    }
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }
