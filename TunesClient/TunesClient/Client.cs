@@ -42,14 +42,14 @@ namespace TunesClient
                 Console.WriteLine("\n");
 
                 //delete Tune by Title (input)
-                /*serializer = new DataContractJsonSerializer(typeof(SuggestedTunes));
+                serializer = new DataContractJsonSerializer(typeof(SuggestedTunes));
                 Console.WriteLine("*************************delete tunes(title)*************************");
                 Console.WriteLine("Please enter name of song to delete");
                 var delTune = Console.ReadLine();
                 HttpResponseMessage httpResponse = await client.DeleteAsync(BaseURI + "delete/" + delTune);
                 httpResponse.EnsureSuccessStatusCode();
                 Console.WriteLine("Song" + delTune + "deleted");
-                Console.WriteLine("\n");*/
+                Console.WriteLine("\n");
 
                 //get tune after delete (input)
                 serializer = new DataContractJsonSerializer(typeof(List<SuggestedTunes>));
