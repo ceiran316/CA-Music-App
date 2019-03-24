@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TunesAPI.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class TunesTwo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

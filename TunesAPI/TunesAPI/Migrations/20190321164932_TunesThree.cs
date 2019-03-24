@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TunesAPI.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class TunesThree : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

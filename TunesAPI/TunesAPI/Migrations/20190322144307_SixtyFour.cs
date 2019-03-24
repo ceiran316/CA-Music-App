@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TunesAPI.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class SixtyFour : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
