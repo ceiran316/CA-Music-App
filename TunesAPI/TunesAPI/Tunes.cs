@@ -93,11 +93,7 @@ namespace TunesAPI
             );
         }
     }
-
-    public enum Genre
-    {
-        Pop, Rock, Blues, Folk, Dance, HipHop, Metal, Jazz, Country, Disco 
-    }
+    
     public class Tunes
     {
         //ID autogenerates
