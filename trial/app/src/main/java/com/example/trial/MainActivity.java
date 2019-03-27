@@ -23,6 +23,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private String SERVICE_URI = "https://catunes.azurewebsites.net/api/tunes/all";
+    private String GENRE_URI = "https://catunes.azurewebsites.net/api/tunes/Genre/Rock";
+    private String STATS_URI = "https://catunes.azurewebsites.net/api/tunes/cheapest";
     private String TAG = "trial";
 
 
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         //View mTextViewResult = findViewById(R.id.all);
         Button bt = findViewById(R.id.button);
+        Button genre = findViewById(R.id.button9);
+        Button stats = findViewById(R.id.button10);
 
         bt.setOnClickListener(new View.OnClickListener()
         {
@@ -40,6 +44,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 callService(view);
+            }
+        });
+
+        genre.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                genreService(view);
+            }
+        });
+
+        stats.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                statsService(view);
             }
         });
     }
@@ -85,4 +107,89 @@ public class MainActivity extends AppCompatActivity {
             outputTextView.setText(e2.toString());
         }
     }
+
+
+    public void genreService(View v) {
+        // get TextView for displaying result
+        final TextView outputTextView = findViewById(R.id.all);
+
+        try {
+            // make a string request (JSON request an alternative)
+            RequestQueue queue = Volley.newRequestQueue(this);
+            Log.d(TAG, "Making request");
+            try {
+                StringRequest strObjRequest = new StringRequest(Request.Method.GET, GENRE_URI,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                String input = response;
+                                Gson gson = new Gson();
+
+                                Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
+                                List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+
+                                outputTextView.setText(tunesList.toString());
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                outputTextView.setText(error.toString());
+                                Log.d(TAG, "Error" + error.toString());
+                            }
+                        });
+                queue.add(strObjRequest);           // can have multiple in a queue, and can cancel
+            } catch (Exception e1) {
+                Log.d(TAG, e1.toString());
+                outputTextView.setText(e1.toString());
+            }
+        } catch (Exception e2) {
+            Log.d(TAG, e2.toString());
+            outputTextView.setText(e2.toString());
+        }
+    }
+
+
+    public void statsService(View v) {
+        // get TextView for displaying result
+        final TextView outputTextView = findViewById(R.id.all);
+
+        try {
+            // make a string request (JSON request an alternative)
+            RequestQueue queue = Volley.newRequestQueue(this);
+            Log.d(TAG, "Making request");
+            try {
+                StringRequest strObjRequest = new StringRequest(Request.Method.GET, STATS_URI,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                String input = response;
+                                Gson gson = new Gson();
+
+                                Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
+                                List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+
+                                outputTextView.setText(tunesList.toString());
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                outputTextView.setText(error.toString());
+                                Log.d(TAG, "Error" + error.toString());
+                            }
+                        });
+                queue.add(strObjRequest);           // can have multiple in a queue, and can cancel
+            } catch (Exception e1) {
+                Log.d(TAG, e1.toString());
+                outputTextView.setText(e1.toString());
+            }
+        } catch (Exception e2) {
+            Log.d(TAG, e2.toString());
+            outputTextView.setText(e2.toString());
+        }
+    }
+
 }

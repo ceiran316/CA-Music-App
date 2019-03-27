@@ -27,7 +27,7 @@ public class Tunes {
     public String Duration;
 
     public String toString() {
-        return Artist + " " + Title + " " + Album;
+        return Artist + " " + Title;
     }
 }
 
