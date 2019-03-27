@@ -353,7 +353,7 @@ namespace TunesAPI.Controllers
             var record = _context.SuggestedTunes.SingleOrDefault(d => d.Title == titleIn);
             string connectionString = null;
             string sql = null;
-            connectionString = "Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            connectionString = "Server=tcp:tunesserver.database.windows.net,1433;Initial Catalog=tunesdb;Persist Security Info=False;User ID=antoneville;Password=JellyTots0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             if (record == null)
             {
                 using (SqlConnection cnn = new SqlConnection(connectionString))
@@ -387,7 +387,7 @@ namespace TunesAPI.Controllers
             var record = _context.SuggestedTunes.SingleOrDefault(d => d.Title == titleIn);
             string connectionString = null;
             string sql = null;
-            connectionString = "Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            connectionString = "Server=tcp:tunesserver.database.windows.net,1433;Initial Catalog=tunesdb;Persist Security Info=False;User ID=antoneville;Password=JellyTots0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             if (record != null)
             {
                 using (SqlConnection cnn = new SqlConnection(connectionString))
@@ -432,7 +432,7 @@ namespace TunesAPI.Controllers
             var record = _context.SuggestedTunes.SingleOrDefault(d => d.Id == id);
             string connectionString = null;
             string sql = null;
-            connectionString = "Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            connectionString = "Server=tcp:tunesserver.database.windows.net,1433;Initial Catalog=tunesdb;Persist Security Info=False;User ID=antoneville;Password=JellyTots0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             if (record != null)
             {
                 using (SqlConnection cnn = new SqlConnection(connectionString))
