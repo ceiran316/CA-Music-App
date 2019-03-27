@@ -22,7 +22,7 @@ import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private String SERVICE_URI = "https://ca-music-app.azurewebsites.net/api/tunes/all";
+    private String SERVICE_URI = "https://catunes.azurewebsites.net/api/tunes/all";
     private String TAG = "trial";
 
 
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     public void callService(View v) {
