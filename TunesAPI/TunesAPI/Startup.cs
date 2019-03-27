@@ -25,7 +25,7 @@ namespace TunesAPI
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var connection = @"Server=tcp:ca-music-app-server.database.windows.net,1433;Initial Catalog=ca_music-app-db;Persist Security Info=False;User ID=x00132492;Password=db17Jan92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            var connection = @"Server=tcp:tunesserver.database.windows.net,1433;Initial Catalog=tunesdb;Persist Security Info=False;User ID=antoneville;Password=JellyTots0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             services.AddDbContext<TunesContext>
                 (options => options.UseSqlServer(connection));
