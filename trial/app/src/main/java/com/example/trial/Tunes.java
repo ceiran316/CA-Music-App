@@ -26,8 +26,9 @@ public class Tunes {
     @SerializedName("duration")
     public String Duration;
 
-    public String toString()
-    {
-        return Title + " " + Artist + " " + Album;
+    public String toString() {
+        return Artist + " " + Title + " " + Album;
     }
 }
+
+
