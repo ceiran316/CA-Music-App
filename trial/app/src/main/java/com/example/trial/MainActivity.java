@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1,tuneTitles);
 
                         autoCompleteTextView.setAdapter(arrayAdapter);
+                        autoCompleteTextView.setThreshold(1);
                     }
                 },
                 new Response.ErrorListener() {
