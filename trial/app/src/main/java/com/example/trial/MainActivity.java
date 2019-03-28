@@ -3,6 +3,8 @@ package com.example.trial;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,8 +20,11 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import android.widget.ArrayAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import static android.app.PendingIntent.getActivity;
 
 public class MainActivity extends AppCompatActivity {
     private String SERVICE_URI = "https://catunes.azurewebsites.net/api/tunes/all";
@@ -64,7 +69,46 @@ public class MainActivity extends AppCompatActivity {
                 statsService(view);
             }
         });
+
+        /*
+        final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest strObjRequest = new StringRequest(Request.Method.GET, SERVICE_URI,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        String input = response;
+                        Gson gson = new Gson();
+
+                        Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
+                        List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+
+                        //List<String> titleList = tunesList.get(3).toString();
+
+                        String[] array = tunesList.toArray(new String[tunesList.size()]);
+
+                         ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, array);
+                        //outputTextView.setText(tunesList.toString());
+                        autoCompleteTextView.setAdapter(listAdapter);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //outputTextView.setText(error.toString());
+                        Log.d(TAG, "Error" + error.toString());
+                    }
+                });
+        queue.add(strObjRequest);
+*/
+
+
+
     }
+
+
 
 
     public void callService(View v) {
@@ -86,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
                                 List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+
 
                                 outputTextView.setText(tunesList.toString());
                             }
@@ -160,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
             RequestQueue queue = Volley.newRequestQueue(this);
             Log.d(TAG, "Making request");
             try {
-                StringRequest strObjRequest = new StringRequest(Request.Method.GET, STATS_URI,
+                StringRequest strObjRequest = new StringRequest(Request.Method.GET, SERVICE_URI,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -168,10 +213,11 @@ public class MainActivity extends AppCompatActivity {
                                 String input = response;
                                 Gson gson = new Gson();
 
-                                Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
-                                List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+                                Type TuneListType = new TypeToken<ArrayList<GenreInfo>>(){}.getType();
+                                List<GenreInfo> tunesList = gson.fromJson(input, TuneListType);
 
-                                outputTextView.setText(tunesList.toString());
+
+                                outputTextView.setText(tunesList.toString().replace("[", "").replace("]", "").replace(",", ""));
                             }
                         },
                         new Response.ErrorListener() {
@@ -190,6 +236,9 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, e2.toString());
             outputTextView.setText(e2.toString());
         }
+
+
+
     }
 
 }
