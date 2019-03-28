@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
+
         final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -85,13 +87,15 @@ public class MainActivity extends AppCompatActivity {
                         Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
                         List<Tunes> tunesList = gson.fromJson(input, TuneListType);
 
-                        //List<String> titleList = tunesList.get(3).toString();
+                        ArrayList<String> tuneTitles = new ArrayList<String>();
 
-                        String[] array = tunesList.toArray(new String[tunesList.size()]);
+                        for(int i=0; i < tunesList.size(); i++) {
+                            tuneTitles.add(i,tunesList.get(i).getTitle());
+                        }
 
-                         ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, array);
-                        //outputTextView.setText(tunesList.toString());
-                        autoCompleteTextView.setAdapter(listAdapter);
+                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1,tuneTitles);
+
+                        autoCompleteTextView.setAdapter(arrayAdapter);
                     }
                 },
                 new Response.ErrorListener() {
@@ -102,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         queue.add(strObjRequest);
-*/
 
 
 

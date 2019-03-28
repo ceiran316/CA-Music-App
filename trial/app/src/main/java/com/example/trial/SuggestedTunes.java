@@ -1,5 +1,7 @@
 package com.example.trial;
 
+import android.widget.ArrayAdapter;
+
 import com.google.gson.annotations.SerializedName;
 
 public class SuggestedTunes {
