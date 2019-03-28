@@ -35,6 +35,12 @@ namespace TunesAPI.Controllers
             return _context.Tunes.OrderBy(t => t.IrishChart).Take(10);
         }
 
+        [HttpGet("top5")]
+        public IEnumerable<Tunes> GetTop5()
+        {
+            return _context.Tunes.OrderBy(t => t.IrishChart).Take(5);
+        }
+
         //GET Tunes by name
         [HttpGet("title/{title}")]
         [ProducesResponseType(404)]
