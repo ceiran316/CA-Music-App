@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
         Button bt = findViewById(R.id.button);
         Button genre = findViewById(R.id.button9);
         Button stats = findViewById(R.id.button10);
+
+        final ImageView imgurl = findViewById(R.id.img);
+        final TextView text = findViewById(R.id.txt);
+
 
         bt.setOnClickListener(new View.OnClickListener()
         {
@@ -87,6 +93,21 @@ public class MainActivity extends AppCompatActivity {
                         Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
                         List<Tunes> tunesList = gson.fromJson(input, TuneListType);
 
+
+
+                        ArrayList<String> albumArt = new ArrayList<>();
+
+                        for(int i = 0; i < tunesList.size(); i++) {
+                            albumArt.add(i,tunesList.get(i).getAlbumCoverLink());
+                        }
+
+
+                        //String imageUri = "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png";
+                        //Picasso.with(MainActivity.this).load(imageUri).into(imgurl);
+
+
+
+
                         ArrayList<String> tuneTitles = new ArrayList<String>();
 
                         for(int i=0; i < tunesList.size(); i++) {
@@ -97,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
 
                         autoCompleteTextView.setAdapter(arrayAdapter);
                         autoCompleteTextView.setThreshold(1);
+
+                        for(int i = 0; i < tunesList.size(); i++) {
+                            Picasso.with(MainActivity.this).load(albumArt.get(i)).into(imgurl);
+                            text.setText(tuneTitles.get(i));
+                        }
                     }
                 },
                 new Response.ErrorListener() {
