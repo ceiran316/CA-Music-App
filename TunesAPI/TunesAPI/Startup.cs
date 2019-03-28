@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Diagnostics.CodeAnalysis;
+using TunesAPI.Data;
 
 namespace TunesAPI
 {
