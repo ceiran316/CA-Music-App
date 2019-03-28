@@ -38,6 +38,10 @@ public class Tunes {
         return Title;
     }
 
+    public String getAlbumCoverLink() {
+        return AlbumCoverLink;
+    }
+
     public String getAlbum() {
         return Album;
     }
