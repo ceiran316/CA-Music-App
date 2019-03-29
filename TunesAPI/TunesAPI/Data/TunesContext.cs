@@ -5,6 +5,11 @@ namespace TunesAPI.Data
 {
     public class TunesContext : DbContext
     {
+        public TunesContext()
+        {
+
+        }
+
         public TunesContext(DbContextOptions<TunesContext> options)
             : base(options)
         { }

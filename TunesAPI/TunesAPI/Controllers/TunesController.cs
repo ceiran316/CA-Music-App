@@ -16,6 +16,10 @@ namespace TunesAPI.Controllers
     {
         private readonly TunesContext _context;
 
+        public TunesController()
+        {
+        }
+
         public TunesController(TunesContext context)
         {
             _context = context;
@@ -123,6 +127,7 @@ namespace TunesAPI.Controllers
                     g.IrishChart,
                     g.Title,
                     g.Artist,
+                    g.Album,
                     g.Genre
                 });
             if (song == null)
@@ -151,8 +156,8 @@ namespace TunesAPI.Controllers
                 .Select(g => new {
                     g.IrishChart,
                     g.Title,
-                    g.Artist,
-                    g.Genre})
+                    g.Artist
+                })
                 .ToListAsync();
             if (type == null)
             {
@@ -181,7 +186,6 @@ namespace TunesAPI.Controllers
                     g.IrishChart,
                     g.Title,
                     g.Artist,
-                    g.Genre
                 }).Take(5)
                 .ToListAsync();
             if (type == null)
@@ -195,7 +199,7 @@ namespace TunesAPI.Controllers
         }
 
         //Get latest Tunes
-        [HttpGet("latest")]
+        [HttpGet("newestAlbum")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
         public ActionResult<Tunes> GetLatestSongs()
@@ -222,7 +226,7 @@ namespace TunesAPI.Controllers
         }
 
         //Get Oldest Tunes 
-        [HttpGet("oldest")]
+        [HttpGet("oldestAlbum")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
         public ActionResult<Tunes> GetOldestSongs()
@@ -249,7 +253,7 @@ namespace TunesAPI.Controllers
         }
 
         //Get cheapest Tunes 
-        [HttpGet("cheapest")]
+        [HttpGet("leastExpensive")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
         public ActionResult<Tunes> GetCheapestSongs()
@@ -259,7 +263,7 @@ namespace TunesAPI.Controllers
                 .Select(g => new
                 {
                     g.IrishChart,
-                    g.Title,
+                    g.Album,
                     g.Artist,
                     g.Genre,
                     g.Price
@@ -276,7 +280,7 @@ namespace TunesAPI.Controllers
         }
 
         //Get cheapest Tunes 
-        [HttpGet("dearest")]
+        [HttpGet("mostExpensive")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
         public ActionResult<Tunes> GetDearestSongs()
@@ -286,7 +290,7 @@ namespace TunesAPI.Controllers
                 .Select(g => new
                 {
                     g.IrishChart,
-                    g.Title,
+                    g.Album,
                     g.Artist,
                     g.Genre,
                     g.Price
@@ -326,7 +330,7 @@ namespace TunesAPI.Controllers
         }
 
         //Get popular Tunes 
-        [HttpGet("popular")]
+        [HttpGet("mostPopularArtist")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
         public ActionResult<Tunes> GetMostPopularArtist()
