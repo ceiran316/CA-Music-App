@@ -16,10 +16,6 @@ namespace TunesAPI.Controllers
     {
         private readonly TunesContext _context;
 
-        public TunesController()
-        {
-        }
-
         public TunesController(TunesContext context)
         {
             _context = context;
