@@ -26,8 +26,50 @@ public class Tunes {
     @SerializedName("duration")
     public String Duration;
 
+    public int getID() {
+        return ID;
+    }
+
+    public String getArtist() {
+        return Artist;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public String getAlbumCoverLink() {
+        return AlbumCoverLink;
+    }
+
+    public String getAlbum() {
+        return Album;
+    }
+
+    public String getGenre() {
+        return Genre;
+    }
+
+
+    public String getDuration() {
+        return Duration;
+    }
+
     public String toString() {
-        return Artist + " " + Title;
+        return Title;
+    }
+
+}
+
+class Stats extends Tunes {
+    public String toString() {
+        return getDuration();
+    }
+}
+
+class GenreInfo extends Tunes {
+    public String toString() {
+        return  "\n" + getArtist() + "\t" + getTitle() + "\t" + getGenre() ;
     }
 }
 
