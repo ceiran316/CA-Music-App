@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CA Música</string>
     <string name="genre" translatable="true">GÉNERO</string>
     <string name="home" translatable="true">CASA</string>
     <string name="stats" translatable="true">ESTADÍSTICAS</string>
+    <string name="top20Text" translatable="true">TOP 20</string>
+    <string name="top40Text" translatable="true">21-40</string>
 </resources>
