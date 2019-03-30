@@ -48,15 +48,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         //View mTextViewResult = findViewById(R.id.all);
-        Button bt = findViewById(R.id.button);
-        Button genre = findViewById(R.id.button9);
-        Button stats = findViewById(R.id.button10);
+        Button homeBtn = findViewById(R.id.home);
+        Button genreBtn = findViewById(R.id.genre);
+        Button statsBtn = findViewById(R.id.stats);
+
+        String helloTrans = getResources().getString(R.string.app_name);
+        String homeTrans = getResources().getString(R.string.home);
+        String genreTrans = getResources().getString(R.string.genre);
+        String statsTrans = getResources().getString(R.string.stats);
 
         final ImageView imgurl = findViewById(R.id.img);
         final TextView text = findViewById(R.id.txt);
 
 
-        bt.setOnClickListener(new View.OnClickListener()
+        homeBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -65,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        genre.setOnClickListener(new View.OnClickListener()
+        genreBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
