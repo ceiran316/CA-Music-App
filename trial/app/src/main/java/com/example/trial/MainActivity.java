@@ -37,14 +37,15 @@ public class MainActivity extends AppCompatActivity {
     private String STATS_URI = "https://catunes.azurewebsites.net/api/tunes/cheapest";
     private String TAG = "trial";
 
+     ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mListView = (ListView) findViewById(R.id.listView);
 
-        final ListView mListView = (ListView) findViewById(R.id.listView);
 
 
         //View mTextViewResult = findViewById(R.id.all);
@@ -57,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
         String genreTrans = getResources().getString(R.string.genre);
         String statsTrans = getResources().getString(R.string.stats);
 
-        final ImageView imgurl = findViewById(R.id.img);
-        final TextView text = findViewById(R.id.txt);
+
 
 
         homeBtn.setOnClickListener(new View.OnClickListener()
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                callService(view);
+                homeService(view);
             }
         });
 
@@ -89,6 +89,20 @@ public class MainActivity extends AppCompatActivity {
         }); */
 
 
+        homeService(mListView);
+
+
+
+    }
+
+
+
+    public void homeService(View v) {
+
+        mListView.setVisibility(View.VISIBLE);
+
+        final ImageView imgurl = findViewById(R.id.img);
+        final TextView text = findViewById(R.id.txt);
         final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -104,14 +118,14 @@ public class MainActivity extends AppCompatActivity {
                         List<Tunes> tunesList = gson.fromJson(input, TuneListType);
 
 
-                       // Tunes one = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
+                        // Tunes one = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
                         //Tunes two = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
                         //Tunes three = new Tunes(tunesList.get(2).getArtist(), tunesList.get(2).getTitle(), tunesList.get(2).getAlbum(),tunesList.get(2).getAlbumCoverLink());
 
                         ArrayList<Tunes> tunesMad = new ArrayList<>();
                         Tunes storage;
                         for(int i=0; i < tunesList.size(); i++) {
-                            storage = new Tunes(tunesList.get(i).getArtist(), tunesList.get(i).getTitle(), tunesList.get(i).getAlbum(),tunesList.get(i).getAlbumCoverLink());
+                            storage = new Tunes(tunesList.get(i).getArtist(), tunesList.get(i).getTitle(), tunesList.get(i).getGenre(),tunesList.get(i).getAlbumCoverLink());
                             tunesMad.add(storage);
                         }
 
@@ -161,9 +175,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         queue.add(strObjRequest);
-
-
-
     }
 
 
@@ -215,6 +226,8 @@ public class MainActivity extends AppCompatActivity {
     public void genreService(View v) {
         // get TextView for displaying result
         final TextView outputTextView = findViewById(R.id.all);
+        mListView.setVisibility(View.INVISIBLE);
+
 
         try {
             // make a string request (JSON request an alternative)
