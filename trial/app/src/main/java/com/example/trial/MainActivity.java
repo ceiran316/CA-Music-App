@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "trial";
 
      ListView mListView;
+     ListView zListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mListView = (ListView) findViewById(R.id.listView);
+        zListView = (ListView) findViewById(R.id.listView2);
 
 
 
@@ -70,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*genreBtn.setOnClickListener(new View.OnClickListener()
+        genreBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                genreService(view);
+                buyService(view);
             }
-        });*/
+        });
 
        /* stats.setOnClickListener(new View.OnClickListener()
         {
@@ -89,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
         }); */
 
 
+
+
         homeService(mListView);
+        //buyService(zListView);
 
 
 
@@ -99,7 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void homeService(View v) {
 
+        zListView.setVisibility(View.INVISIBLE);
         mListView.setVisibility(View.VISIBLE);
+
 
         final ImageView imgurl = findViewById(R.id.img);
         final TextView text = findViewById(R.id.txt);
@@ -180,136 +187,56 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /*public void callService(View v) {
-        // get TextView for displaying result
-        final TextView outputTextView = findViewById(R.id.all);
+    public void buyService(View v) {
 
-        try {
-            // make a string request (JSON request an alternative)
-            RequestQueue queue = Volley.newRequestQueue(this);
-            Log.d(TAG, "Making request");
-            try {
-                StringRequest strObjRequest = new StringRequest(Request.Method.GET, SERVICE_URI,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-
-                                String input = response;
-                                Gson gson = new Gson();
-
-                                Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
-                                List<Tunes> tunesList = gson.fromJson(input, TuneListType);
-
-
-                                outputTextView.setText(tunesList.toString());
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                outputTextView.setText(error.toString());
-                                Log.d(TAG, "Error" + error.toString());
-                            }
-                        });
-                queue.add(strObjRequest);           // can have multiple in a queue, and can cancel
-            } catch (Exception e1) {
-                Log.d(TAG, e1.toString());
-                outputTextView.setText(e1.toString());
-            }
-        } catch (Exception e2) {
-            Log.d(TAG, e2.toString());
-            outputTextView.setText(e2.toString());
-        }
-    }
-
-
-    public void genreService(View v) {
-        // get TextView for displaying result
-        final TextView outputTextView = findViewById(R.id.all);
         mListView.setVisibility(View.INVISIBLE);
+        zListView.setVisibility(View.VISIBLE);
 
 
-        try {
-            // make a string request (JSON request an alternative)
-            RequestQueue queue = Volley.newRequestQueue(this);
-            Log.d(TAG, "Making request");
-            try {
-                StringRequest strObjRequest = new StringRequest(Request.Method.GET, GENRE_URI,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest strObjRequest = new StringRequest(Request.Method.GET, SERVICE_URI,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
 
-                                String input = response;
-                                Gson gson = new Gson();
+                        String input = response;
+                        Gson gson = new Gson();
 
-                                Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
-                                List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+                        Type TuneListType = new TypeToken<ArrayList<Tunes>>() {
+                        }.getType();
+                        List<Tunes> tunesList = gson.fromJson(input, TuneListType);
 
-                                outputTextView.setText(tunesList.toString());
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                outputTextView.setText(error.toString());
-                                Log.d(TAG, "Error" + error.toString());
-                            }
-                        });
-                queue.add(strObjRequest);           // can have multiple in a queue, and can cancel
-            } catch (Exception e1) {
-                Log.d(TAG, e1.toString());
-                outputTextView.setText(e1.toString());
-            }
-        } catch (Exception e2) {
-            Log.d(TAG, e2.toString());
-            outputTextView.setText(e2.toString());
+
+                        ArrayList<BuyAlbums> purchaseTunes = new ArrayList<>();
+                        BuyAlbums storage;
+                        for (int i = 0; i < tunesList.size(); i++) {
+                            storage = new BuyAlbums(tunesList.get(i).getArtist(), tunesList.get(i).getAlbum(), tunesList.get(i).getAlbumCoverLink(), tunesList.get(i).getBuyLink());
+                            purchaseTunes.add(storage);
+                        }
+
+
+                        PurchaseAdapter adapter = new PurchaseAdapter(MainActivity.this, purchaseTunes);
+                        zListView.setAdapter(adapter);
+                    }
+
+    },
+            new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            //outputTextView.setText(error.toString());
+            Log.d(TAG, "Error" + error.toString());
         }
+    });
+        queue.add(strObjRequest);
+}
+
+
+
+
+
     }
 
-/*
-    public void statsService(View v) {
-        // get TextView for displaying result
-        final TextView outputTextView = findViewById(R.id.all);
-
-        try {
-            // make a string request (JSON request an alternative)
-            RequestQueue queue = Volley.newRequestQueue(this);
-            Log.d(TAG, "Making request");
-            try {
-                StringRequest strObjRequest = new StringRequest(Request.Method.GET, SERVICE_URI,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-
-                                String input = response;
-                                Gson gson = new Gson();
-
-                                Type TuneListType = new TypeToken<ArrayList<GenreInfo>>(){}.getType();
-                                List<GenreInfo> tunesList = gson.fromJson(input, TuneListType);
-
-
-                                outputTextView.setText(tunesList.toString().replace("[", "").replace("]", "").replace(",", ""));
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                outputTextView.setText(error.toString());
-                                Log.d(TAG, "Error" + error.toString());
-                            }
-                        });
-                queue.add(strObjRequest);           // can have multiple in a queue, and can cancel
-            } catch (Exception e1) {
-                Log.d(TAG, e1.toString());
-                outputTextView.setText(e1.toString());
-            }
-        } catch (Exception e2) {
-            Log.d(TAG, e2.toString());
-            outputTextView.setText(e2.toString());
-        }
 
 
 
-    }*/
 
-}
