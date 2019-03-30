@@ -99,19 +99,17 @@ public class MainActivity extends AppCompatActivity {
                         List<Tunes> tunesList = gson.fromJson(input, TuneListType);
 
 
-                        Tunes one = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
-                        Tunes two = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
-                        Tunes three = new Tunes(tunesList.get(2).getArtist(), tunesList.get(2).getTitle(), tunesList.get(2).getAlbum(),tunesList.get(2).getAlbumCoverLink());
-
-                        /*for(int i=0; i < tunesList.size(); i++) {
-
-                        }*/
+                       // Tunes one = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
+                        //Tunes two = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
+                        //Tunes three = new Tunes(tunesList.get(2).getArtist(), tunesList.get(2).getTitle(), tunesList.get(2).getAlbum(),tunesList.get(2).getAlbumCoverLink());
 
                         ArrayList<Tunes> tunesMad = new ArrayList<>();
+                        Tunes storage;
+                        for(int i=0; i < tunesList.size(); i++) {
+                            storage = new Tunes(tunesList.get(i).getArtist(), tunesList.get(i).getTitle(), tunesList.get(i).getAlbum(),tunesList.get(i).getAlbumCoverLink());
+                            tunesMad.add(storage);
+                        }
 
-                        tunesMad.add(one);
-                        tunesMad.add(two);
-                        tunesMad.add(three);
 
 
                         TunesListAdapter adapter = new TunesListAdapter(MainActivity.this, tunesMad);
