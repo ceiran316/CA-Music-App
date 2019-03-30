@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
 
 public class TunesListAdapter extends ArrayAdapter<Tunes> {
 
-    private static final String TAG = "PersonListAdapter";
+    private static final String TAG = "TunesListAdapter";
 
     private Context mContext;
     private int lastPosition = -1;
@@ -43,9 +43,8 @@ public class TunesListAdapter extends ArrayAdapter<Tunes> {
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-;
 
-        //get the persons information
+
         String artist = getItem(position).getArtist();
         String title = getItem(position).getTitle();
         //String album = getItem(position).getAlbum();
