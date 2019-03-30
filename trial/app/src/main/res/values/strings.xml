@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name" translatable="true">CA TUNES</string>
+    <string name="genre" translatable="true">GENRE</string>
+    <string name="home" translatable="true">HOME</string>
+    <string name="stats" translatable="true">STATS</string>
 </resources>
