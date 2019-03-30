@@ -441,12 +441,12 @@ namespace TunesAPI.Controllers
         }
 
         //deleteing list entry from id input
-        [HttpDelete("delete/{id}")]
+        [HttpDelete("delete/{title}")]
         [ProducesResponseType(200)]             // ok
         [ProducesResponseType(404)]             // not found
-        public IActionResult DeleteEntry([FromRoute] int id)
+        public IActionResult DeleteEntry([FromRoute] string title)
         {
-            var record = _context.SuggestedTunes.SingleOrDefault(d => d.Id == id);
+            var record = _context.SuggestedTunes.SingleOrDefault(d => d.Title == title);
             string connectionString = null;
             string sql = null;
             connectionString = "Server=tcp:tunesserver.database.windows.net,1433;Initial Catalog=tunesdb;Persist Security Info=False;User ID=antoneville;Password=JellyTots0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -454,11 +454,11 @@ namespace TunesAPI.Controllers
             {
                 using (SqlConnection cnn = new SqlConnection(connectionString))
                 {
-                    sql = "DELETE FROM SuggestedTunes WHERE Id = @id";
+                    sql = "DELETE FROM SuggestedTunes WHERE Id = '@title'";
                     cnn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cnn))
                     {
-                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@title", title);
                         cmd.ExecuteNonQuery();
                         return Ok(record);
                     }
