@@ -30,7 +30,8 @@ public class TunesListAdapter extends ArrayAdapter<Tunes> {
     private static class ViewHolder {
         TextView artist;
         TextView title;
-        TextView album;
+        //TextView album;
+        TextView genre;
         ImageView image;
     }
 
@@ -47,7 +48,8 @@ public class TunesListAdapter extends ArrayAdapter<Tunes> {
         //get the persons information
         String artist = getItem(position).getArtist();
         String title = getItem(position).getTitle();
-        String album = getItem(position).getAlbum();
+        //String album = getItem(position).getAlbum();
+        String genre = getItem(position).getAlbum();
         String imgUrl = getItem(position).getAlbumCoverLink();
 
 
@@ -64,7 +66,8 @@ public class TunesListAdapter extends ArrayAdapter<Tunes> {
             holder= new ViewHolder();
             holder.artist = (TextView) convertView.findViewById(R.id.textView1);
             holder.title = (TextView) convertView.findViewById(R.id.textView2);
-            holder.album = (TextView) convertView.findViewById(R.id.textView3);
+            //holder.album = (TextView) convertView.findViewById(R.id.textView3);
+            holder.genre = (TextView) convertView.findViewById(R.id.textView3);
             holder.image = (ImageView) convertView.findViewById(R.id.image);
 
             result=convertView;
@@ -80,7 +83,8 @@ public class TunesListAdapter extends ArrayAdapter<Tunes> {
         lastPosition = position;
 
         holder.artist.setText(artist);
-        holder.album.setText(album);
+        //holder.album.setText(album);
+        holder.genre.setText(genre);
         holder.title.setText(title);
 
         Picasso.with(mContext).load(imgUrl).into(holder.image);
