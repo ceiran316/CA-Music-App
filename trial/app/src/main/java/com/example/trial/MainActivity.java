@@ -8,6 +8,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -42,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        final ListView mListView = (ListView) findViewById(R.id.listView);
+
+
         //View mTextViewResult = findViewById(R.id.all);
         Button bt = findViewById(R.id.button);
         Button genre = findViewById(R.id.button9);
@@ -69,14 +74,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        stats.setOnClickListener(new View.OnClickListener()
+       /* stats.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 statsService(view);
             }
-        });
+        }); */
 
 
         final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
@@ -92,6 +97,26 @@ public class MainActivity extends AppCompatActivity {
 
                         Type TuneListType = new TypeToken<ArrayList<Tunes>>(){}.getType();
                         List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+
+
+                        Tunes one = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
+                        Tunes two = new Tunes("hi", "ff", "FFF", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Madonna_-_Like_a_Prayer_album.png/220px-Madonna_-_Like_a_Prayer_album.png");
+                        Tunes three = new Tunes(tunesList.get(2).getArtist(), tunesList.get(2).getTitle(), tunesList.get(2).getAlbum(),tunesList.get(2).getAlbumCoverLink());
+
+                        /*for(int i=0; i < tunesList.size(); i++) {
+
+                        }*/
+
+                        ArrayList<Tunes> tunesMad = new ArrayList<>();
+
+                        tunesMad.add(one);
+                        tunesMad.add(two);
+                        tunesMad.add(three);
+
+
+                        TunesListAdapter adapter = new TunesListAdapter(MainActivity.this, tunesMad);
+                        mListView.setAdapter(adapter);
+
 
 
 
@@ -225,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+/*
     public void statsService(View v) {
         // get TextView for displaying result
         final TextView outputTextView = findViewById(R.id.all);
@@ -269,6 +294,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
 
 }

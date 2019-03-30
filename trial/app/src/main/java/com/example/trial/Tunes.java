@@ -26,6 +26,15 @@ public class Tunes {
     @SerializedName("duration")
     public String Duration;
 
+
+   public Tunes(String artist, String title, String album, String url) {
+        this.Artist = artist;
+        this.Title = title;
+        this.Album = album;
+        this.AlbumCoverLink = url;
+    }
+
+
     public int getID() {
         return ID;
     }
@@ -60,7 +69,7 @@ public class Tunes {
     }
 
 }
-
+/*
 class Stats extends Tunes {
     public String toString() {
         return getDuration();
@@ -71,6 +80,6 @@ class GenreInfo extends Tunes {
     public String toString() {
         return  "\n" + getArtist() + "\t" + getTitle() + "\t" + getGenre() ;
     }
-}
+} */
 
 
