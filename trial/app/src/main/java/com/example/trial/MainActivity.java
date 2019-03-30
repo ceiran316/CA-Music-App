@@ -70,14 +70,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        genreBtn.setOnClickListener(new View.OnClickListener()
+        /*genreBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 genreService(view);
             }
-        });
+        });*/
 
        /* stats.setOnClickListener(new View.OnClickListener()
         {
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void callService(View v) {
+    /*public void callService(View v) {
         // get TextView for displaying result
         final TextView outputTextView = findViewById(R.id.all);
 

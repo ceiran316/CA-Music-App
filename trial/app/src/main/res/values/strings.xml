@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name" translatable="true">CA TUNES</string>
-    <string name="genre" translatable="true">GENRE</string>
+    <string name="genre" translatable="true">ARTIST</string>
     <string name="home" translatable="true">HOME</string>
-    <string name="stats" translatable="true">STATS</string>
+    <string name="stats" translatable="true">CHART</string>
+    <string name="top20Text" translatable="true">TOP 20</string>
+    <string name="top40Text" translatable="true">21-40</string>
 </resources>
