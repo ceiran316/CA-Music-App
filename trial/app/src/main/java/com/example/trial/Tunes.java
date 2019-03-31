@@ -26,6 +26,10 @@ public class Tunes {
     @SerializedName("duration")
     public String Duration;
 
+    public Tunes() {
+
+    }
+
 
    public Tunes(String artist, String title, String album, String url) {
         this.Artist = artist;
@@ -63,12 +67,30 @@ public class Tunes {
     public String getDuration() {
         return Duration;
     }
+    public String getBuyLink() {
+        return BuyLink;
+    }
 
     public String toString() {
         return Title;
     }
 
 }
+
+class BuyAlbums extends Tunes
+{
+    public BuyAlbums(String artist, String album, String albumCoverLink, String buy) {
+        this.Artist = artist;
+        this.Album = album;
+        this.AlbumCoverLink = albumCoverLink;
+        this.BuyLink = buy;
+    }
+
+}
+
+
+
+
 /*
 class Stats extends Tunes {
     public String toString() {
