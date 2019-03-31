@@ -454,11 +454,10 @@ namespace TunesAPI.Controllers
             {
                 using (SqlConnection cnn = new SqlConnection(connectionString))
                 {
-                    sql = "DELETE FROM SuggestedTunes WHERE Id = '@title'";
+                    sql = "DELETE FROM SuggestedTunes WHERE Id = '" + title + "'";
                     cnn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cnn))
                     {
-                        cmd.Parameters.AddWithValue("@title", title);
                         cmd.ExecuteNonQuery();
                         return Ok(record);
                     }
