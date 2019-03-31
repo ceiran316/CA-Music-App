@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="true">CA MUZYKA</string>
+    <string name="purchase" translatable="true">KUPOWAĆ</string>
+    <string name="home" translatable="true">DOM</string>
+    <string name="genre" translatable="true">GATUNEK MUZYCZNY</string>
+    <string name="top20Text" translatable="true">TOP 20</string>
+    <string name="top40Text" translatable="true">21-40</string>
+    <string name="buy" translatable="true">KUPOWAĆ</string>
+    <string name="search" translatable="true">SZUKAJ</string>
+    <string name="rock" translatable="true">SKAŁA</string>
+    <string name="pop" translatable="true">MUZYKA POP</string>
+    <string name="disco" translatable="true">DYSKOTEKA</string>
+</resources>

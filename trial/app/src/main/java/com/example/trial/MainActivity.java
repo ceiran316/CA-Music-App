@@ -55,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
         //View mTextViewResult = findViewById(R.id.all);
         Button homeBtn = findViewById(R.id.home);
         Button genreBtn = findViewById(R.id.genre);
-        Button statsBtn = findViewById(R.id.stats);
+        Button purchaseBtn = findViewById(R.id.purchase);
 
         String helloTrans = getResources().getString(R.string.app_name);
         String homeTrans = getResources().getString(R.string.home);
         String genreTrans = getResources().getString(R.string.genre);
-        String statsTrans = getResources().getString(R.string.stats);
+        String purchaseTrans = getResources().getString(R.string.purchase);
 
 
 
