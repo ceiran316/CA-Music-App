@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CA 音樂</string>
+    <string name="purchase" translatable="true">購買</string>
+    <string name="home" translatable="true">家</string>
+    <string name="genre" translatable="true">類型</string>
+    <string name="top20Text" translatable="true">最佳 20</string>
+    <string name="top40Text" translatable="true">21-40</string>
+    <string name="buy" translatable="true">購買</string>
+    <string name="search" translatable="true">搜索</string>
+    <string name="rock" translatable="true">岩石</string>
+    <string name="pop" translatable="true">POP</string>
+    <string name="disco" translatable="true">迪斯科</string>
+</resources>
