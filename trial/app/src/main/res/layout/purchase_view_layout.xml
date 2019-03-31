@@ -50,6 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="75"
+            android:text="@string/buy"
+            android:gravity="center"
             android:id="@+id/buttonLink"
             />
 

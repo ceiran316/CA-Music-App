@@ -3,6 +3,7 @@ package com.example.trial;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -33,12 +34,14 @@ import static android.app.PendingIntent.getActivity;
 
 public class MainActivity extends AppCompatActivity {
     private String SERVICE_URI = "https://catunes.azurewebsites.net/api/tunes/all";
+    private String TOPCHART_URI = "https://catunes.azurewebsites.net/api/tunes/top20";
     private String GENRE_URI = "https://catunes.azurewebsites.net/api/tunes/Genre/Rock";
     private String STATS_URI = "https://catunes.azurewebsites.net/api/tunes/cheapest";
     private String TAG = "trial";
 
      ListView mListView;
      ListView zListView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         mListView = (ListView) findViewById(R.id.listView);
         zListView = (ListView) findViewById(R.id.listView2);
-
 
 
         //View mTextViewResult = findViewById(R.id.all);
@@ -113,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest strObjRequest = new StringRequest(Request.Method.GET, SERVICE_URI,
+        StringRequest strObjRequest = new StringRequest(Request.Method.GET, TOPCHART_URI,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -140,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
                         TunesListAdapter adapter = new TunesListAdapter(MainActivity.this, tunesMad);
                         mListView.setAdapter(adapter);
+
 
 
 
@@ -172,6 +175,12 @@ public class MainActivity extends AppCompatActivity {
                             Picasso.with(MainActivity.this).load(albumArt.get(i)).into(imgurl);
                             text.setText(tuneTitles.get(i));
                         }
+
+
+
+
+
+
                     }
                 },
                 new Response.ErrorListener() {
