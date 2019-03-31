@@ -33,15 +33,6 @@
                 android:text="@string/home"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/genre"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_weight="70"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:text="@string/genre"
-                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/purchase"
@@ -95,18 +86,53 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
 
-        <Button
+       <Button
             android:id="@+id/topTen"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/top20Text"
             android:gravity="center"
-            android:drawableEnd="@mipmap/arrow_dwn"
             />
 
 
 
+           <!-- <Button
+                android:id="@+id/rockButton"
+                android:layout_width="10dp"
+                android:layout_height="60dp"
+                android:drawableEnd="@mipmap/arrow_dwn"
+                android:gravity="center"
+                android:layout_weight=""
+                android:text="@string/rock" />
+
+
+            <Button
+                android:id="@+id/discoButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/disco"
+                android:gravity="center"
+                android:layout_weight="70"
+                android:drawableEnd="@mipmap/arrow_dwn"
+                />
+
+            <Button
+                android:id="@+id/popButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/pop"
+                android:gravity="center"
+                android:layout_weight="70"
+                android:drawableEnd="@mipmap/arrow_dwn"
+                /> -->
+
+
     </LinearLayout>
+
+
+
+
+
 
     <LinearLayout
         android:id="@+id/listViewHome"
@@ -132,6 +158,9 @@
                 android:layout_height="match_parent">
 
 
+
+
+
                 <ListView
                     android:id="@+id/listView"
                     android:layout_width="match_parent"
@@ -142,6 +171,7 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="0dp" />
+
                 <ListView
                     android:id="@+id/listView2"
                     android:layout_width="match_parent"
@@ -196,7 +226,8 @@
         android:id="@+id/flags"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:weightSum="100"
@@ -204,16 +235,60 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/es_flag"
+            android:src="@mipmap/en_flag"
             android:layout_weight="2"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/us_flag"
+            android:src="@mipmap/fr_flag"
             android:layout_weight="2"/>
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/it_flag"
+            android:layout_weight="2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/de_flag"
+            android:layout_weight="2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/po_flag"
+            android:layout_weight="2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ru_flag"
+            android:layout_weight="2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ch_flag"
+            android:layout_weight="2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/in_flag"
+            android:layout_weight="2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/arg_flag"
+            android:layout_weight="2"/>
+
+
     </LinearLayout>
+
 
 
 
