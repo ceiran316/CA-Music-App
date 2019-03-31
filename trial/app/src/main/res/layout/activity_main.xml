@@ -30,7 +30,7 @@
                 android:layout_weight="70"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text="home"
+                android:text="@string/home"
                 android:textStyle="bold" />
 
             <Button
@@ -40,7 +40,7 @@
                 android:layout_weight="70"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text="genre"
+                android:text="@string/genre"
                 android:textStyle="bold" />
 
             <Button
@@ -50,7 +50,7 @@
                 android:layout_weight="70"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text="stats"
+                android:text="@string/stats"
                 android:textStyle="bold" />
 
 
@@ -67,6 +67,7 @@
         android:layout_marginTop="68dp"
         android:layout_weight="100"
         android:orientation="vertical"
+        android:text="@string/search"
         app:layout_constraintTop_toTopOf="@+id/topButtons"
         tools:layout_editor_absoluteX="16dp">
 
