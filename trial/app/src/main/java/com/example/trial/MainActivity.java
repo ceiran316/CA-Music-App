@@ -35,12 +35,19 @@ import static android.app.PendingIntent.getActivity;
 public class MainActivity extends AppCompatActivity {
     private String SERVICE_URI = "https://catunes.azurewebsites.net/api/tunes/all";
     private String TOPCHART_URI = "https://catunes.azurewebsites.net/api/tunes/top20";
-    private String GENRE_URI = "https://catunes.azurewebsites.net/api/tunes/Genre/Rock";
+    private String GENREROCK_URI = "https://catunes.azurewebsites.net/api/tunes/Genre/Rock";
     private String STATS_URI = "https://catunes.azurewebsites.net/api/tunes/cheapest";
     private String TAG = "trial";
 
      ListView mListView;
      ListView zListView;
+
+
+    //Button rockBtn;
+    //Button popBtn;
+    //Button discoBtn;
+
+    Button top20;
 
 
     @Override
@@ -52,15 +59,25 @@ public class MainActivity extends AppCompatActivity {
         zListView = (ListView) findViewById(R.id.listView2);
 
 
+        //rockBtn = findViewById(R.id.rockButton);
+        //popBtn = findViewById(R.id.popButton);
+        //iscoBtn = findViewById(R.id.discoButton);
+        top20 = findViewById(R.id.topTen);
+
         //View mTextViewResult = findViewById(R.id.all);
         Button homeBtn = findViewById(R.id.home);
-        Button genreBtn = findViewById(R.id.genre);
+        //Button genreBtn = findViewById(R.id.genre);
         Button purchaseBtn = findViewById(R.id.purchase);
 
-        String helloTrans = getResources().getString(R.string.app_name);
-        String homeTrans = getResources().getString(R.string.home);
-        String genreTrans = getResources().getString(R.string.genre);
-        String purchaseTrans = getResources().getString(R.string.purchase);
+        //rockBtn.setVisibility(View.INVISIBLE);
+        //popBtn.setVisibility(View.INVISIBLE);
+        //discoBtn.setVisibility(View.INVISIBLE);
+
+
+        //String helloTrans = getResources().getString(R.string.app_name);
+        //String homeTrans = getResources().getString(R.string.home);
+        //String genreTrans = getResources().getString(R.string.genre);
+        //String purchaseTrans = getResources().getString(R.string.purchase);
 
 
 
@@ -74,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        genreBtn.setOnClickListener(new View.OnClickListener()
+        purchaseBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -83,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* stats.setOnClickListener(new View.OnClickListener()
+      /* genreBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                statsService(view);
+                genreService(view);
             }
         }); */
 
@@ -108,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
         zListView.setVisibility(View.INVISIBLE);
         mListView.setVisibility(View.VISIBLE);
+        top20.setVisibility(View.VISIBLE);
 
 
         final ImageView imgurl = findViewById(R.id.img);
@@ -198,8 +216,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void buyService(View v) {
 
+
         mListView.setVisibility(View.INVISIBLE);
         zListView.setVisibility(View.VISIBLE);
+        top20.setVisibility(View.INVISIBLE);
 
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -228,16 +248,95 @@ public class MainActivity extends AppCompatActivity {
                         zListView.setAdapter(adapter);
                     }
 
-    },
-            new Response.ErrorListener() {
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            //outputTextView.setText(error.toString());
-            Log.d(TAG, "Error" + error.toString());
-        }
-    });
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //outputTextView.setText(error.toString());
+                        Log.d(TAG, "Error" + error.toString());
+                    }
+                });
         queue.add(strObjRequest);
-}
+    }
+
+/*
+    public void genreService(View v) {
+
+        mListView.setVisibility(View.INVISIBLE);
+        zListView.setVisibility(View.INVISIBLE);
+
+        top20.setVisibility(View.INVISIBLE);
+
+        rockBtn.setVisibility(View.VISIBLE);
+        popBtn.setVisibility(View.VISIBLE);
+        discoBtn.setVisibility(View.VISIBLE);
+
+
+
+        rockBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //popBtn.setVisibility(View.INVISIBLE);
+                //discoBtn.setVisibility(View.INVISIBLE);
+                //mListView.setVisibility(View.VISIBLE);
+
+
+                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                StringRequest strObjRequest = new StringRequest(Request.Method.GET, GENREROCK_URI,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                popBtn.setVisibility(View.INVISIBLE);
+                                discoBtn.setVisibility(View.INVISIBLE);
+
+                                mListView.setVisibility(View.VISIBLE);
+                                String input = response;
+                                Gson gson = new Gson();
+
+                                Type TuneListType = new TypeToken<ArrayList<Tunes>>() {
+                                }.getType();
+                                List<Tunes> tunesList = gson.fromJson(input, TuneListType);
+
+
+                                ArrayList<Tunes> tunesMad = new ArrayList<>();
+                                Tunes storage;
+                                for(int i=0; i < tunesList.size(); i++) {
+                                    storage = new Tunes(tunesList.get(i).getArtist(), tunesList.get(i).getTitle(), tunesList.get(i).getGenre(),tunesList.get(i).getAlbumCoverLink());
+                                    tunesMad.add(storage);
+                                }
+
+
+                                TunesListAdapter adapter = new TunesListAdapter(MainActivity.this, tunesMad);
+                                mListView.setAdapter(adapter);
+
+
+                                rockBtn.setOnClickListener(new View.OnClickListener() {
+                                   public void onClick(View v) {
+                                       mListView.setVisibility(View.INVISIBLE);
+                                   }
+                                });
+
+
+
+
+
+                            }
+
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                //outputTextView.setText(error.toString());
+                                Log.d(TAG, "Error" + error.toString());
+                            }
+                        });
+                queue.add(strObjRequest);
+            }
+        });
+
+
+    }
+    */
 
 
 
