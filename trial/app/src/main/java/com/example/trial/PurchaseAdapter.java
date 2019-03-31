@@ -45,7 +45,7 @@ public class PurchaseAdapter extends ArrayAdapter<BuyAlbums> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-        String artist = getItem(position).getArtist();
+        final String artist = getItem(position).getArtist();
         String album = getItem(position).getAlbum();
         final String buy = getItem(position).getBuyLink();
         String imgUrl = getItem(position).getAlbumCoverLink();
@@ -93,6 +93,17 @@ public class PurchaseAdapter extends ArrayAdapter<BuyAlbums> {
                 mContext.startActivity(browserOpen);
             }
         });
+
+
+        /*holder.artist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openTune = new Intent(mContext, PurchaseAdapter.class);
+                openTune.putExtra("Artist: ", artist);
+                mContext.startActivity(openTune);
+            }
+        });*/
+
 
 
 

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CA संगीत</string>
+    <string name="purchase" translatable="true">खरीद</string>
+    <string name="home" translatable="true">होम</string>
+    <string name="genre" translatable="true">शैली</string>
+    <string name="top20Text" translatable="true">चोटी 20</string>
+    <string name="top40Text" translatable="true">21-40</string>
+    <string name="buy" translatable="true">खरीद</string>
+    <string name="search" translatable="true">खोज</string>
+    <string name="rock" translatable="true">चट्टान</string>
+    <string name="pop" translatable="true">पॉप</string>
+    <string name="disco" translatable="true">डिस्को</string>
+</resources>

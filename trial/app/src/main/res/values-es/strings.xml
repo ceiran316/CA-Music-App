@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">CA Música</string>
-    <string name="genre" translatable="true">GÉNERO</string>
+    <string name="app_name">CA MÚSICA</string>
+    <string name="purchase" translatable="true">COMPRA</string>
     <string name="home" translatable="true">CASA</string>
-    <string name="stats" translatable="true">ESTADÍSTICAS</string>
-    <string name="top20Text" translatable="true">TOP 20</string>
+    <string name="genre" translatable="true">ESTADÍSTICAS</string>
+    <string name="top20Text" translatable="true">PARTE SUPERIOR 20</string>
     <string name="top40Text" translatable="true">21-40</string>
+    <string name="buy" translatable="true">COMPRAR</string>
+    <string name="search" translatable="true">BUSCAR</string>
+    <string name="rock" translatable="true">ROCK</string>
+    <string name="pop" translatable="true">POP</string>
+    <string name="disco" translatable="true">DISCO</string>
 </resources>

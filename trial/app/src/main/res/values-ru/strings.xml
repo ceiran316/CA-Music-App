@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="true">CA МУЗЫКА</string>
+    <string name="purchase" translatable="true">КУПИТЬ</string>
+    <string name="home" translatable="true">ГЛАВНАЯ</string>
+    <string name="genre" translatable="true">ЖАНР</string>
+    <string name="top20Text" translatable="true">ТОП 20</string>
+    <string name="top40Text" translatable="true">21-40</string>
+    <string name="buy" translatable="true">КУПИТЬ</string>
+    <string name="search" translatable="true">ПОИСК</string>
+    <string name="rock" translatable="true">КАМЕНЬ</string>
+    <string name="pop" translatable="true">POP</string>
+    <string name="disco" translatable="true">ДИСКОТЕКА</string>
+</resources>
